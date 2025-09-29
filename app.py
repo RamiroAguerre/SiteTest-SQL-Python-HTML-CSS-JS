@@ -12,9 +12,9 @@ conn = pyodbc.connect(
     "SERVER=LAPTOP-DVQGVMT9\\SQLEXPRESS01;"
     "DATABASE=MODELO_TRABAJO_PRACTICO;"
     "Trusted_Connection=yes;"
-    "Encrypt=no;"
+    "Encrypt=yes;"
+    "TrustServerCertificate=yes;"
 )
-
 
 cursor = conn.cursor()
 
