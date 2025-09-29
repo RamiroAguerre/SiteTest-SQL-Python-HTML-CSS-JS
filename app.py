@@ -8,12 +8,13 @@ app.secret_key = "supersecreto"
 # Conexión a SQL Server
 # ----------------------
 conn = pyodbc.connect(
-    'DRIVER={ODBC Driver 18 for SQL Server};'
-    'SERVER=localhost\\SQLEXPRESS;'  # Cambiar según tu instancia
-    'DATABASE=MODELO_TRABAJO_PRACTICO;'
-    'UID=sa;'                        # Cambiar según tu usuario
-    'PWD=TuPassword'                 # Cambiar según tu contraseña
+    'DRIVER={ODBC Driver 18 for SQL Server};' # Cambiar según tu instancia
+    'SERVER=TU_SERVIDOR;'
+    'DATABASE=TU_BASE_DE_DATOS;'
+    'UID=TU_USUARIO;'                        # Cambiar según tu usuario
+    'PWD=TU_CONTRASEÑA'                      # Cambiar según tu contraseña
 )
+
 cursor = conn.cursor()
 
 # ----------------------
