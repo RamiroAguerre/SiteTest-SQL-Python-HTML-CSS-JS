@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel Admin</title>
+</head>
+<body>
+    <h1>Bienvenido Administrador {{ session['user'] }}</h1>
+    <h2>Clientes registrados</h2>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.Nombre }} {{ cliente.Apellido }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Cerrar sesión</a>
+</body>
+</html>
