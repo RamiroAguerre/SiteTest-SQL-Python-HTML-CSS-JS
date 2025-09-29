@@ -12,8 +12,11 @@ conn = pyodbc.connect(
     'SERVER=localhost\SQLEXPRESS;'
     'DATABASE=MODELO_TRABAJO_PRACTICO;'
     'UID=sa;'
-    'PWD=MiContraseña123'
+    'PWD=MiContraseña123;'
+    'Encrypt=no;'
+    'TrustServerCertificate=yes;'
 )
+
 
 
 cursor = conn.cursor()
