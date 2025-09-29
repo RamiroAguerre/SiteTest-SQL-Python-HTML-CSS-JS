@@ -2,15 +2,25 @@
 <html>
 <head>
     <title>Panel Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
 <body>
     <h1>Bienvenido Administrador {{ session['user'] }}</h1>
+
     <h2>Clientes registrados</h2>
     <ul>
         {% for cliente in clientes %}
-            <li>{{ cliente.Nombre }} {{ cliente.Apellido }}</li>
+            <li>{{ cliente.NOMBRE }} {{ cliente.APELLIDO }} - {{ cliente.CIUDAD }}</li>
         {% endfor %}
     </ul>
+
+    <h2>Stock de productos</h2>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.PRODUCTO }} - Stock: {{ producto.CANTIDAD_DISPONIBLE }}</li>
+        {% endfor %}
+    </ul>
+
     <a href="/logout">Cerrar sesión</a>
 </body>
 </html>
