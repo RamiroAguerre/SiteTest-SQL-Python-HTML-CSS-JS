@@ -2,15 +2,25 @@
 <html>
 <head>
     <title>Panel Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
 <body>
     <h1>Bienvenido {{ session['user'] }}</h1>
+
     <h2>Productos disponibles</h2>
     <ul>
         {% for producto in productos %}
-            <li>{{ producto.Nombre }} - Stock: {{ producto.Cantidad }}</li>
+            <li>{{ producto.PRODUCTO }} - Stock: {{ producto.CANTIDAD_DISPONIBLE }}</li>
         {% endfor %}
     </ul>
+
+    <h2>Historial de compras</h2>
+    <ul>
+        {% for compra in historial %}
+            <li>Orden ID: {{ compra.ID_ORDEN_PEDIDO }}, Fecha: {{ compra.FECHA }}, Producto: {{ compra.PRODUCTO }}, Cantidad: {{ compra.CANTIDAD }}, Precio Unit: {{ compra.PRECIO_UNIT }}</li>
+        {% endfor %}
+    </ul>
+
     <a href="/logout">Cerrar sesión</a>
 </body>
 </html>
